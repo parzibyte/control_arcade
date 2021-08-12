@@ -1,4 +1,4 @@
-const RUTA_SERVIDOR = "http://localhost:8000";
+const RUTA_SERVIDOR = ".";
 new Vue({
     el: "#app",
     data: () => ({
