@@ -16,7 +16,7 @@ def apagar_gpio():
     global gpio_encendido
     print("Apagando GPIO...")
     try:
-        subprocess.run(["gpionext", "stop"], check=True)
+        subprocess.Popen(["bash","/usr/bin/gpionext", "stop"])
         print("GPIO apagado")
     except:
         print("Error apagando GPIO")
@@ -27,7 +27,7 @@ def encender_gpio():
     global gpio_encendido
     print("Encendiendo GPIO...")
     try:
-        subprocess.run(["gpionext", "start"], check=True)
+        subprocess.Popen(["bash","/usr/bin/gpionext", "start"])
         print("GPIO encendido")
     except:
         print("Error encendiendo GPIO")
