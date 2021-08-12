@@ -12,6 +12,7 @@ import (
 var fechaTerminacion time.Time
 
 const MinutosRecargaPorMoneda = 10
+const DirectorioEstatico="./static"
 
 func obtenerSegundosRestantes() int64 {
 	return int64(fechaTerminacion.Sub(time.Now()).Seconds())
@@ -31,9 +32,7 @@ func segundosASegundosMinutosYHoras(segundos float64) string {
 
 func main() {
 	fechaTerminacion = time.Now()
-	http.HandleFunc("/", func(w http.ResponseWriter, peticion *http.Request) {
-		json.NewEncoder(w).Encode(obtenerSegundosRestantes())
-	})
+	http.Handle("/", http.FileServer(http.Dir(DirectorioEstatico)))
 
 	http.HandleFunc("/segundos_restantes", func(w http.ResponseWriter, peticion *http.Request) {
 		json.NewEncoder(w).Encode(obtenerSegundosRestantes())

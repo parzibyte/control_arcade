@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de arcade - By Parzibyte</title>
+    <link rel="stylesheet" href="css/buefy.min.css">
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/buefy.min.js"></script>
+</head>
+
+<body>
+    <section class="section" id="app">
+        <div class="columns">
+            <div class="column">
+                <h1 class="is-size-1 has-text-centered">Control de arcade  - By Parzibyte</h1>
+            </div>
+        </div>
+        <div class="columns has-text-centered">
+            <div class="column">
+                <h2 class="is-size-2">Recargar tiempo</h2>
+                <b-field label="Cantidad de minutos">
+                    <b-slider tooltip-always size="is-large" v-model.number="minutos" step="5" :min="10" :max="120">
+                    </b-slider>
+                </b-field>
+                <b-field class="buttons">
+                    <b-button @click="recargar()" :loading="cargando" type="is-success">Recargar {{minutos}} minutos
+                    </b-button>
+                </b-field>
+            </div>
+        </div>
+        <hr>
+        <div class="columns has-text-centered">
+            <div class="column">
+                <h2 class="is-size-2">Reiniciar tiempo</h2>
+                <b-button :loading="cargando" @click="reiniciarTiempo()" type="is-danger">Reiniciar</b-button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Control para máquina arcade. Creado y mantenido por <strong>Parzibyte</strong>.
+                <br>
+                Mira mis otros proyectos en <a href="https://parzibyte.me/blog">mi blog</a>
+            </p>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
