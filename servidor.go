@@ -48,7 +48,7 @@ func main() {
 		minutosArray, ok := r.URL.Query()["minutos"]
 		minutos := MinutosRecargaPorMoneda
 
-		if ok && len(minutosArray[0]) >= 1 {
+		if ok && len(minutosArray) >= 1 {
 			var err error
 			minutos, err = strconv.Atoi(minutosArray[0])
 			if err != nil {
