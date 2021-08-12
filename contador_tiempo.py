@@ -55,7 +55,11 @@ def segundos_a_segundos_minutos_y_horas(segundos):
 
 
 def obtener_tiempo_restante():
-    return json.loads(urllib.request.urlopen(URL_SERVIDOR+"/segundos_restantes").read())
+    try:
+        return json.loads(urllib.request.urlopen(URL_SERVIDOR+"/segundos_restantes").read())
+    except:
+        print("Error obteniendo tiempo restante del servidor")
+        return 0
 
 
 class Application(tk.Frame):
