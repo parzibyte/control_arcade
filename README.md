@@ -15,6 +15,8 @@ Clonar este repositorio
 
 `git clone https://github.com/parzibyte/control_arcade`
 
+Dale permisos a iniciar.sh con chmod +x iniciar.sh
+
 Y crear un archivo .desktop como se indica aquí: 
 
 Para ejecutar lo que hay en ~/control_arcade/iniciar.sh
