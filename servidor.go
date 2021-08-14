@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"runtime"
@@ -27,17 +26,6 @@ func obtenerSegundosRestantes() int64 {
 	return int64(fechaTerminacion.Sub(time.Now()).Seconds())
 }
 
-func agregarCeroSiEsNecesario(valor int) string {
-	return fmt.Sprintf("%02d", valor)
-}
-
-func segundosASegundosMinutosYHoras(segundos float64) string {
-	horas := int(segundos / 60 / 60)
-	segundos -= float64(horas * 60 * 60)
-	minutos := int(segundos / 60)
-	segundos -= float64(minutos * 60)
-	return fmt.Sprintf("%02d:%02d:%02d", horas, minutos, int(segundos))
-}
 func estamosEnLinux() bool {
 	return strings.Contains(runtime.GOOS, "linux")
 }
